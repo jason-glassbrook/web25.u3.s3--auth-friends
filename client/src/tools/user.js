@@ -16,16 +16,16 @@ const clearToken = () => {
 };
 
 /// user allowed ///
-const setAllowed = (status) => {
-  storage.setItem (ns ('status'), status ? 'y' : 'n');
+const setIsAllowed = (isAllowed) => {
+  storage.setItem (ns ('isAllowed'), isAllowed ? 'y' : 'n');
 }
-const getAllowed = () => {
+const getIsAllowed = () => {
   return (
-    storage.getItem (ns ('status')) === 'y' ? true : false
+    storage.getItem (ns ('isAllowed')) === 'y' ? true : false
   );
 };
-const clearAllowed = () => {
-  storage.removeItem (ns ('status'));
+const clearIsAllowed = () => {
+  storage.removeItem (ns ('isAllowed'));
 };
 
 ///
@@ -35,13 +35,13 @@ export default {
     get : getToken,
     clear : clearToken,
   },
-  allowed : {
-    set : setAllowed,
-    get : getAllowed,
-    clear : clearAllowed,
+  isAllowed : {
+    set : setIsAllowed,
+    get : getIsAllowed,
+    clear : clearIsAllowed,
   },
   clear : () => {
     clearToken ();
-    clearAllowed ();
+    clearIsAllowed ();
   },
 };
