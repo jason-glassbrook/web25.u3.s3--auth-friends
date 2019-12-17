@@ -11,7 +11,7 @@ const getToken = () => {
     storage.getItem (ns ('token'))
   );
 };
-const deleteToken = () => {
+const clearToken = () => {
   storage.removeItem (ns ('token'));
 };
 
@@ -24,7 +24,7 @@ const getAllowed = () => {
     storage.getItem (ns ('status')) === 'y' ? true : false
   );
 };
-const deleteAllowed = () => {
+const clearAllowed = () => {
   storage.removeItem (ns ('status'));
 };
 
@@ -33,11 +33,15 @@ export default {
   token : {
     set : setToken,
     get : getToken,
-    delete : deleteToken,
+    clear : clearToken,
   },
   allowed : {
     set : setAllowed,
     get : getAllowed,
-    delete : deleteAllowed,
+    clear : clearAllowed,
+  },
+  clear : () => {
+    clearToken ();
+    clearAllowed ();
   },
 };
