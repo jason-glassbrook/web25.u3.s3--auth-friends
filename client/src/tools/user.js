@@ -6,20 +6,24 @@ const setToken = (token) => {
   storage.setItem (ns ('token'), token);
 };
 const getToken = () => {
-  storage.getItem (ns ('token'));
+  return (
+    storage.getItem (ns ('token'))
+  );
 };
 const deleteToken = () => {
   storage.removeItem (ns ('token'));
 };
 
-/// user logged status ///
-const setStatus = (status) => {
+/// user allowed ///
+const setAllowed = (status) => {
   storage.setItem (ns ('status'), status ? 'i' : 'o');
 }
-const getStatus = () => {
-  storage.getItem (ns ('status'));
+const getAllowed = () => {
+  return (
+    storage.getItem (ns ('status')) === 'i' ? true : false
+  );
 };
-const deleteStatus = () => {
+const deleteAllowed = () => {
   storage.removeItem (ns ('status'));
 };
 
@@ -29,9 +33,9 @@ export default {
     get : getToken,
     delete : deleteToken,
   },
-  status : {
-    set : setStatus,
-    get : getStatus,
-    delete : deleteStatus,
+  allowed : {
+    set : setAllowed,
+    get : getAllowed,
+    delete : deleteAllowed,
   },
 };
