@@ -1,3 +1,4 @@
+/// helpers ///
 const storage = window.localStorage
 const ns = (key) => `auth-friends.user.${key}`;
 
@@ -16,17 +17,18 @@ const deleteToken = () => {
 
 /// user allowed ///
 const setAllowed = (status) => {
-  storage.setItem (ns ('status'), status ? 'i' : 'o');
+  storage.setItem (ns ('status'), status ? 'y' : 'n');
 }
 const getAllowed = () => {
   return (
-    storage.getItem (ns ('status')) === 'i' ? true : false
+    storage.getItem (ns ('status')) === 'y' ? true : false
   );
 };
 const deleteAllowed = () => {
   storage.removeItem (ns ('status'));
 };
 
+///
 export default {
   token : {
     set : setToken,
