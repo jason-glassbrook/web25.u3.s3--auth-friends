@@ -1,7 +1,7 @@
 import React from 'react';
 
 // import authios from 'tools/authios';
-// import { client, server } from 'routes';
+import { client } from 'routes';
 import user from 'tools/user';
 
 class LogOut extends React.Component {
@@ -10,6 +10,8 @@ class LogOut extends React.Component {
   logout = (e) => {
     e.preventDefault ();
     user.clear ();
+
+    this.props.history.push (client.ends.root ());
   };
 
   render () {
