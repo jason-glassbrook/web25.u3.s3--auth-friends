@@ -19,7 +19,7 @@ const _List = (C) => styled (C) `
   padding: 8px;
 
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row wrap;
   align-content: center;
   justify-content: center;
   align-items: center;

@@ -10,7 +10,8 @@ import colors from 'styles/colors';
 ***************************************/
 
 const _Container = (C) => styled (C) `
-  flex: 1 0 auto;
+  flex: 0 0 auto;
+  width: 400px;
   margin: 8px;
   border: 1px solid ${colors.gray[5]};
   border-radius: 8px;
