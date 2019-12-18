@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-import server from 'routes/server';
+import { server } from 'routes';
+import user from 'tools/user';
 
 const authios = () => {
-  const token = localStorage.getItem ('token');
   return axios.create ({
-    baseURL: server.base.url,
-    headers: {
-      Authorization: token
-    }
+    baseURL : server.base.url,
+    headers : {
+      Authorization : user.token.get (),
+    },
   });
 };
 
