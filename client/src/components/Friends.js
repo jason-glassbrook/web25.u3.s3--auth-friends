@@ -104,7 +104,9 @@ class Friends extends React.Component {
     )
     .then ((response) => {
       console.log (response);
-      this.setState ({});
+      this.setState ({
+        friends : response.data,
+      });
     })
     .catch ((error) => {
       console.log (error);
@@ -119,7 +121,9 @@ class Friends extends React.Component {
     )
     .then ((response) => {
       console.log (response);
-      this.setState ({});
+      this.setState ({
+        friends : response.data,
+      });
     })
     .catch ((error) => {
       console.log (error);
@@ -133,7 +137,9 @@ class Friends extends React.Component {
     )
     .then ((response) => {
       console.log (response);
-      this.setState ({});
+      this.setState ({
+        friends : response.data,
+      });
     })
     .catch ((error) => {
       console.log (error);
