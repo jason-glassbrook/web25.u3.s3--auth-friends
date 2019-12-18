@@ -1,10 +1,10 @@
 import React from 'react';
-import Loader from 'react-loader-spinner';
 
 import authios from 'tools/authios';
 import { server } from 'routes';
 
 import FriendList from './FriendList';
+import FriendListLoader from './FriendListLoader';
 
 class Friends extends React.Component {
 
@@ -29,10 +29,7 @@ class Friends extends React.Component {
         </header>
         <main>
           {this.state.isGettingFriendList ? (
-            <div className='key spinner'>
-              <Loader type='Puff' color='#204963' height={60} width={60} />
-              <p>Getting Friends</p>
-            </div>
+            <FriendListLoader/>
           ) : (
             <FriendList friends={this.state.friends}/>
           )}
