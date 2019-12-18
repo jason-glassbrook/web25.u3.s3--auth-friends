@@ -9,7 +9,7 @@ class LogOut extends React.Component {
 
   logout = (e) => {
     e.preventDefault ();
-    user.clear ()
+    user.clear ();
   };
 
   render () {
