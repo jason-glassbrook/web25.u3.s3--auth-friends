@@ -21,6 +21,7 @@ const App = () => {
     <Router>
       <div className="App">
         <header>
+          <h1>auth-friends</h1>
           <nav><ul><li>
             <NavLink to="/friends">Friends</NavLink>
           </li><li>
