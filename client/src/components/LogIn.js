@@ -28,13 +28,13 @@ class LogIn extends React.Component {
     this.setState ({ isFetching : true });
 
     authios ()
-    .post (server.ends.login (), this.state.creds)
+    .post (server.ends.login.url (), this.state.creds)
     .then ((response) => {
 
       this.setState ({ isFetching : false });
       user.token.set (response.data.body);
       user.isAllowed.set (true);
-      this.props.history.push (client.ends.friends ());
+      this.props.history.push (client.ends.friends.url ());
 
     })
     .catch ((error) => {

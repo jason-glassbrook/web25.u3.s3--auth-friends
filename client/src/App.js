@@ -13,35 +13,38 @@ import LogIn from 'components/LogIn';
 import LogOut from 'components/LogOut';
 import Friends from 'components/Friends';
 
+/// routes ///
+import { client } from 'routes';
+
 /***************************************
   COMPONENT
 ***************************************/
 const App = () => {
   return (
     <Router>
-      <div className="App">
+      <div className='App'>
         <header>
           <h1>auth-friends</h1>
           <nav><ul><li>
-            <NavLink to="/friends">Friends</NavLink>
+            <NavLink to={client.ends.friends.url ()}>Friends</NavLink>
           </li><li>
-            <NavLink to="/login">Log In</NavLink>
+            <NavLink to={client.ends.login.url ()}>Log In</NavLink>
           </li><li>
-            <NavLink to="/logout">Log Out</NavLink>
+            <NavLink to={client.ends.logout.url ()}>Log Out</NavLink>
           </li></ul></nav>
         </header>
         <main>
           <Switch>
             <PrivateRoute
-            path="/friends"
+            path={client.ends.friends.url ()}
             component={Friends}
             />
             <Route
-            path="/login"
+            path={client.ends.login.url ()}
             component={LogIn}
             />
             <Route
-            path="/logout"
+            path={client.ends.logout.url ()}
             component={LogOut}
             />
             <Route

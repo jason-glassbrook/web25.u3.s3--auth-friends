@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 
-import authios from 'tools/authios';
-import { client, server } from 'routes';
+// import authios from 'tools/authios';
+// import { client, server } from 'routes';
 import user from 'tools/user';
 
 class LogOut extends React.Component {

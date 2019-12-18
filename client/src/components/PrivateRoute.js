@@ -11,7 +11,7 @@ const PrivateRoute = ({ component : Component, ...rest }) => {
         return (<Component {...props}/>);
       }
       else {
-        return (<Redirect to={client.ends.login ()}/>);
+        return (<Redirect to={client.ends.login.url ()}/>);
       }
     }}/>
   );
