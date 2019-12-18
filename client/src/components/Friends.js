@@ -4,6 +4,8 @@ import Loader from 'react-loader-spinner';
 import authios from 'tools/authios';
 import { server } from 'routes';
 
+import FriendList from './FriendList';
+
 class Friends extends React.Component {
 
   /***************************************
@@ -32,15 +34,7 @@ class Friends extends React.Component {
               <p>Getting Friends</p>
             </div>
           ) : (
-            <ul className='FriendList'>
-              {this.state.friends.map ((friend) => (
-                <li key={friend.id}>
-                  <p>name: {friend.name}</p>
-                  <p>age: {friend.age}</p>
-                  <p>email: {friend.email}</p>
-                </li>
-              ))}
-            </ul>
+            <FriendList friends={this.state.friends}/>
           )}
         </main>
       </section>
