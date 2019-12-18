@@ -28,7 +28,7 @@ class LogIn extends React.Component {
     this.setState ({ isFetching : true });
 
     authios ()
-    .post (server.ends.login.url (), this.state.creds)
+    .post (server.ends.login.GET (), this.state.creds)
     .then ((response) => {
 
       console.log (response);
@@ -37,7 +37,7 @@ class LogIn extends React.Component {
       user.token.set (response.data.payload);
       user.isAllowed.set (true);
 
-      this.props.history.push (client.ends.friends.url ());
+      this.props.history.push (client.ends.friends ());
 
     })
     .catch ((error) => {

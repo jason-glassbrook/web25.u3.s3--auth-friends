@@ -51,7 +51,7 @@ class Friends extends React.Component {
 
     authios ()
     .get (
-      server.ends.friends.url ()
+      server.ends.friends.GET ()
     )
     .then ((response) => {
       console.log (response);
@@ -78,7 +78,7 @@ class Friends extends React.Component {
 
     authios ()
     .get (
-      server.ends.friend.url (friend.id)
+      server.ends.friend.GET (friend.id)
     )
     .then ((response) => {
       console.log (response);
@@ -97,7 +97,7 @@ class Friends extends React.Component {
   addFriend = (friend) => {
     authios ()
     .post (
-      server.ends.friends.url (),
+      server.ends.friends.POST (),
       friend
     )
     .then ((response) => {
@@ -112,7 +112,7 @@ class Friends extends React.Component {
   editFriend = (friend) => {
     authios ()
     .put (
-      server.ends.friend.url (friend.id),
+      server.ends.friend.PUT (friend.id),
       friend
     )
     .then ((response) => {
@@ -127,7 +127,7 @@ class Friends extends React.Component {
   deleteFriend = (friend) => {
     authios ()
     .delete (
-      server.ends.friend.url (friend.id)
+      server.ends.friend.DELETE (friend.id)
     )
     .then ((response) => {
       console.log (response);

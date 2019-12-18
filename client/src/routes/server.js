@@ -1,19 +1,17 @@
 export default {
-  base : {
-    url : 'http://localhost:5000/api',
-  },
+  base : () => 'http://localhost:5000/api',
   ends : {
     login : {
-      url : () => '/login',
-      requests : [ 'GET' ],
+      GET : () => '/login',
     },
     friends : {
-      url : () => '/friends',
-      requests : [ 'GET', 'POST' ],
+      GET  : () => '/friends',
+      POST : () => '/friends',
     },
     friend : {
-      url : (id) => `/friends/${id}`,
-      requests : [ 'GET', 'PUT', 'DELETE' ],
+      GET    : (id) => `/friends/${id}`,
+      PUT    : (id) => `/friends/${id}`,
+      DELETE : (id) => `/friends/${id}`,
     },
   },
 };

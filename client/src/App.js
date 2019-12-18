@@ -26,25 +26,25 @@ const App = () => {
         <header>
           <h1>auth-friends</h1>
           <nav><ul><li>
-            <NavLink to={client.ends.friends.url ()}>Friends</NavLink>
+            <NavLink to={client.ends.friends ()}>Friends</NavLink>
           </li><li>
-            <NavLink to={client.ends.login.url ()}>Log In</NavLink>
+            <NavLink to={client.ends.login ()}>Log In</NavLink>
           </li><li>
-            <NavLink to={client.ends.logout.url ()}>Log Out</NavLink>
+            <NavLink to={client.ends.logout ()}>Log Out</NavLink>
           </li></ul></nav>
         </header>
         <main>
           <Switch>
             <PrivateRoute
-            path={client.ends.friends.url ()}
+            path={client.ends.friends ()}
             component={Friends}
             />
             <Route
-            path={client.ends.login.url ()}
+            path={client.ends.login ()}
             component={LogIn}
             />
             <Route
-            path={client.ends.logout.url ()}
+            path={client.ends.logout ()}
             component={LogOut}
             />
             <Route

@@ -1,13 +1,7 @@
 export default {
   ends : {
-    login : {
-      url : () => '/login',
-    },
-    logout : {
-      url : () => '/logout',
-    },
-    friends : {
-      url : () => '/friends',
-    }
+    login : () => '/login',
+    logout : () => '/logout',
+    friends : () => '/friends',
   },
 };
