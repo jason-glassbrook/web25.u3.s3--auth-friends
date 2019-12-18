@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Friend from './Friend';
 
 /// styles ///
-import colors from 'styles/colors';
+// import colors from 'styles/colors';
 
 /***************************************
   components
@@ -29,7 +29,7 @@ const List = (c) => styled (c) `
   MAIN
 ***************************************/
 const FriendList = ({ friends, ...rest }) => (
-  <ul className='FriendList'>
+  <List className='FriendList'>
     {friends.map ((friend) => (
       <Friend
       key={friend.id}
@@ -37,7 +37,7 @@ const FriendList = ({ friends, ...rest }) => (
       component='li'
       />
     ))}
-  </ul>
+  </List>
 );
 
 /**************************************/
