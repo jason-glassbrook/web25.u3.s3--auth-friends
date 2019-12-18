@@ -11,12 +11,12 @@ class Friends extends React.Component {
   ***************************************/
   state = {
     friends : [],
-    isGettingAllFriends : false,
+    isGettingFriendList : false,
     isGettingFriend : false,
   };
 
   componentDidMount () {
-    this.getAllFriends ();
+    this.getFriendList ();
   }
 
   render () {
@@ -26,13 +26,13 @@ class Friends extends React.Component {
           <h2>Friends</h2>
         </header>
         <main>
-          {this.state.isGettingFriends ? (
+          {this.state.isGettingFriendList ? (
             <div className='key spinner'>
               <Loader type='Puff' color='#204963' height={60} width={60} />
               <p>Getting Friends</p>
             </div>
           ) : (
-            <ul className='FriendsList'>
+            <ul className='FriendList'>
               {this.state.friends.map ((friend) => (
                 <li key={friend.id}>
                   <p>name: {friend.name}</p>
@@ -53,9 +53,9 @@ class Friends extends React.Component {
 
   /// all friends ///
 
-  getAllFriends = () => {
+  getFriendList = () => {
     this.setState ({
-      isGettingAllFriends : true,
+      isGettingFriendList : true,
     });
 
     authios ()
@@ -73,7 +73,7 @@ class Friends extends React.Component {
     })
     .finally (() => {
       this.setState ({
-        isGettingAllFriends : false,
+        isGettingFriendList : false,
       });
     });
   };
