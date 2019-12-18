@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 
 import authios from 'tools/authios';
 import { client, server } from 'routes';
+import user from 'tools/user';
 
 class LogIn extends React.Component {
   state = {
@@ -31,13 +32,16 @@ class LogIn extends React.Component {
     .then ((response) => {
 
       this.setState ({ isFetching : false });
-      localStorage.setItem ('token', response.data.body);
+      user.token.set (response.data.body);
+      user.isAllowed.set (true);
       this.props.history.push (client.ends.friends ());
 
     })
     .catch ((error) => {
 
       this.setState ({ isFetching : false });
+      user.token.clear ();
+      user.isAllowed.set (false);
       console.log (error);
 
     });
