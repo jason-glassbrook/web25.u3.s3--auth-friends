@@ -1,6 +1,6 @@
 export default {
   base : {
-    url : 'https://localhost:5000/api',
+    url : 'http://localhost:5000/api',
   },
   ends : {
     login : {
