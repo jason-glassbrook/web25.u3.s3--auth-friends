@@ -9,7 +9,7 @@ import colors from 'styles/colors';
   components
 ***************************************/
 
-const _Container = (c) => styled (c) `
+const _Container = (C) => styled (C) `
   flex: 1 0 auto;
   margin: 8px;
   border: 1px solid ${colors.gray[5]};

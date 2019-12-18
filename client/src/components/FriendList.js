@@ -12,7 +12,7 @@ import Friend from './Friend';
   components
 ***************************************/
 
-const List = (c) => styled (c) `
+const _List = (C) => styled (C) `
   flex: 1 0 auto;
   margin: 8px;
   border-radius: 8px;
@@ -28,17 +28,21 @@ const List = (c) => styled (c) `
 /***************************************
   MAIN
 ***************************************/
-const FriendList = ({ friends, ...rest }) => (
-  <List className='FriendList'>
-    {friends.map ((friend) => (
-      <Friend
-      key={friend.id}
-      friend={friend}
-      component='li'
-      />
-    ))}
-  </List>
-);
+const FriendList = ({ friends, ...rest }) => {
+  const List = _List ('ul');
+
+  return (
+    <List className='FriendList'>
+      {friends.map ((friend) => (
+        <Friend
+        key={friend.id}
+        friend={friend}
+        component='li'
+        />
+      ))}
+    </List>
+  );
+};
 
 /**************************************/
 

@@ -28,15 +28,15 @@ const Form = styled.form `
 const Field = styled.div `
   flex: 1 0 auto;
   margin: 4px;
-  border: 1px solid ${colors['light-gray']};
+  border: 1px solid ${colors.gray[3]};
   border-radius: 4px;
   padding: 2px;
-  color: ${colors['gray']};
+  color: ${colors.gray[9]};
 
   display: flex;
   flex-flow: row nowrap;
   align-content: center;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 `;
 
