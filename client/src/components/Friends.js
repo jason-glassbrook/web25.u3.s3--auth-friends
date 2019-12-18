@@ -3,6 +3,7 @@ import React from 'react';
 import authios from 'tools/authios';
 import { server } from 'routes';
 
+import FriendForm from './FriendForm';
 import FriendList from './FriendList';
 import FriendListLoader from './FriendListLoader';
 
@@ -26,6 +27,7 @@ class Friends extends React.Component {
       <section className='Friends'>
         <header>
           <h2>Friends</h2>
+          <FriendForm submit={this.addFriend}/>
         </header>
         <main>
           {this.state.isGettingFriendList ? (
