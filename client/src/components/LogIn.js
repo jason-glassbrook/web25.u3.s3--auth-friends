@@ -31,18 +31,22 @@ class LogIn extends React.Component {
     .post (server.ends.login.url (), this.state.creds)
     .then ((response) => {
 
+      console.log (response);
+
       this.setState ({ isFetching : false });
-      user.token.set (response.data.body);
+      user.token.set (response.data.payload);
       user.isAllowed.set (true);
+
       this.props.history.push (client.ends.friends.url ());
 
     })
     .catch ((error) => {
 
+      console.log (error);
+
       this.setState ({ isFetching : false });
       user.token.clear ();
       user.isAllowed.set (false);
-      console.log (error);
 
     });
   };
