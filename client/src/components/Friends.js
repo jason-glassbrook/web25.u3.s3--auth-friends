@@ -11,7 +11,8 @@ class Friends extends React.Component {
   ***************************************/
   state = {
     friends : [],
-    isGettingFriends : true,
+    isGettingAllFriends : false,
+    isGettingFriend : false,
   };
 
   componentDidMount () {
@@ -53,22 +54,37 @@ class Friends extends React.Component {
   /// all friends ///
 
   getAllFriends = () => {
+    this.setState ({
+      isGettingAllFriends : true,
+    });
+
     authios ()
     .get (
       server.ends.friends.url ()
     )
     .then ((response) => {
       console.log (response);
-      this.setState ({});
+      this.setState ({
+        friends : response.data,
+      });
     })
     .catch ((error) => {
       console.log (error);
+    })
+    .finally (() => {
+      this.setState ({
+        isGettingAllFriends : false,
+      });
     });
   };
 
   /// friend ///
 
   getFriend = (friend) => {
+    this.setState ({
+      isGettingFriend : true,
+    });
+
     authios ()
     .get (
       server.ends.friend.url (friend.id)
@@ -79,6 +95,11 @@ class Friends extends React.Component {
     })
     .catch ((error) => {
       console.log (error);
+    })
+    .finally (() => {
+      this.setState ({
+        isGettingFriend : false,
+      });
     });
   };
 
